@@ -1,0 +1,53 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <div>
+       <input id="search-input" placeholder="Search for products">
+       <!-- We use a specific placeholder in the input to guides users in their search. -->
+    </div>
+
+    <div id="stats"></div>
+
+  </header>
+  <main>
+    <div class="left-column">
+      <div id="categories-refinement"></div>
+    </br>
+      <div id="brand-refinement"></div>
+    </br>
+      <div id="price-refinement"></div>
+    </div>
+
+    <div class="right-column">
+      <div id="hits"></div>
+      <div id="pagination"></div>
+    </div>
+  </main>
+
+  <script type="text/html" id="hit-template">
+      <div class="hit">
+        <div class="hit-image">
+          <a href={{url}}>
+            <img src="{{image}}" alt="{{name}}">
+          </a>
+        </div>
+        <div class="hit-content">
+          <h3 class="hit-price">${{price}}</h3>
+          <a href={{url}}>
+            <h2 class="hit-name">{{{_highlightResult.name.value}}}</h2>
+          </a>
+          <p class="hit-description">{{{_highlightResult.description.value}}}</p>
+        </div>
+      </div>
+  </script>
+  <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+  <script src="app.js"></script>
+
+
+
+</body>
