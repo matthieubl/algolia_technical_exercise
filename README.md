@@ -1,1 +1,1 @@
-# test_algolia
+Hello, world!
